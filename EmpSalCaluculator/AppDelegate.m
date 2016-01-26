@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Employee.h"
 @interface AppDelegate ()
 
 @end
@@ -17,8 +17,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    Employee *emp1 = [[Employee alloc] initWithId:1 sal:2000 age:30 designation:@"Developer" rating:3];
+    
+    Employee *emp2 = [[Employee alloc] initWithId:2 sal:3000 age:31 designation:@"Analyst" rating:2];
+    Employee *emp3 = [[Employee alloc] initWithId:3 sal:4000 age:34 designation:@"Tester" rating:3];
+    
+    Employee *emp4 = [[Employee alloc] initWithId:4 sal:5000 age:36 designation:@"Manager" rating:4];
+    
+    
+    
+    
+    
+    NSArray *empArray = [[NSArray alloc] initWithObjects:emp1,emp2,emp3,emp4, nil];
+    
+    NSLog(@"Average Salary:%i",[Employee AverageSal:empArray]);
+    NSLog(@"Minimum Age:%i",[Employee MiniumAge:empArray]);
+    NSLog(@"Maximum Rating:%i",[Employee MaxRating:empArray]);
+    
+    
+    
+    
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

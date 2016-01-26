@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Employee.h"
 @interface ViewController : UIViewController
+
 
 
 @end
